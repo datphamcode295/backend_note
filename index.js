@@ -4,7 +4,7 @@ const employeeRouter = require('./routes/EmployeeRoutes.js');
 const cors = require("cors")
 
 const app = express();
-
+const PORT = process.env.PORT || 8081
 app.use(cors())
 app.use(express.json()); // Make sure it comes back as json
 
@@ -20,4 +20,4 @@ mongoose.connect('mongodb+srv://vandat2000:vandat2000@cluster0.t2jbz.mongodb.net
 
 app.use(employeeRouter);
 
-app.listen(8081, () => { console.log('Server is running...') });
+app.listen(PORT, () => { console.log('Server is running...') });
